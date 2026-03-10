@@ -2,7 +2,6 @@ public class MeterToFeet {
     public static void main(String[] args) {
        System.out.println("Hello, world john! xxx");
       meterToFeetFunc( 55.55 );
-
    }
 
 static int meterToFeetFunc(double meters){

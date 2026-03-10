@@ -4,8 +4,38 @@ import java.util.Scanner;
 
 public class CompileIt {
     public static void main(String[] args) {
-        test3(args);
+        Scanner scnr = new Scanner(System.in);
+        String tmpStr = scnr.nextLine();
+
+        test4(tmpStr);
    }
+
+   public static void test4(String fileName) {
+       fileName = fileName + ".java";
+
+        try {
+            // 1. Compile the file
+            System.out.println("Compiling " + fileName + "...");
+            Process compileProcess = new ProcessBuilder("javac", fileName).inheritIO().start();
+            int compileResult = compileProcess.waitFor();
+
+            if (compileResult == 0) {
+                System.out.println("Compilation successful!");
+
+                // 2. Run the compiled file (using 'java HelloWorld')
+                // Note: Strip the ".java" extension for the run command
+                String className = fileName.replace(".java", "");
+                System.out.println("Running " + className + "...\n--- Output ---");
+                new ProcessBuilder("java", className).inheritIO().start().waitFor();
+            } else {
+                System.err.println("Compilation failed with code: " + compileResult);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
    public static void test3(String[] args) {
         Scanner scnr = new Scanner(System.in);

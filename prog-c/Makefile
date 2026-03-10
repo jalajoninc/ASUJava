@@ -6,7 +6,7 @@ CFLAGS = -Wall -g
 
 # The target program
 hello: hello.c
-	$(CC) $(CFLAGS) compile.c -o compile
+	$(CC) $(CFLAGS) compile1.c -o compile1
 
 clean:
-	rm -f compile
+	rm -f compile1

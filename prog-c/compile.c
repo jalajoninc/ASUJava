@@ -24,7 +24,32 @@ int main() {
     }
 
     return 0;
+}
 
 
-    
+int addNumbers(int a, int b) {
+    return a + b;
+}
+
+
+
+
+
+int list_files(const char *path) {
+    struct dirent *entry;
+    DIR *dp = opendir(path);
+
+    if (dp == NULL) {
+        perror("opendir");
+        return -1;
+    }
+
+    int count = 0;
+    while ((entry = readdir(dp))) {
+        printf("%s\n", entry->d_name);
+        count++;
+    }
+
+    closedir(dp);
+    return count;
 }

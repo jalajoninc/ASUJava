@@ -3,8 +3,27 @@ import java.util.Scanner;
 
 public class QuitScreen {
    public static void main(String[] args) {
-      test(args);
+      //test(args);
+         loop1(args);
    }
+
+
+      public static void loop1(String[] args) {
+
+         for ( int i = 0; i > -4; --i ){
+            System.out.printf("jwb %d", i );
+         }
+
+         for ( int i = 0; i > -4; i-- ){
+            System.out.printf("jwb %d", i );
+         }
+
+         for ( int i = 0; i < 4; i++ ){
+            System.out.printf("jwb %d", i );
+         }
+
+
+      }
 
       public static void test2(String[] args) {
          Scanner scnr = new Scanner(System.in);
